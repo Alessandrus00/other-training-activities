@@ -1,4 +1,4 @@
-# Important files description
+## Important files description
 
 * `parameters.yaml`: parameters that will be used by the python scripts below to generate the synthetic data 
 * `region.py`: script that generates the region and the pick-up/delivery sites
@@ -7,7 +7,7 @@
 * `mezzi.py`: script that generates the "mezzi.txt" table
 * `spedizioni.py`: script that generates the "spedizioni.txt" table
 
-# Setup
+## Setup
 
 To start generating the instances you need to setup the environment first. Assuming you have conda, you can hit the following:
 
@@ -17,7 +17,7 @@ conda activate delivery
 pip install -r requirements.txt
 ```
 
-# Start generating your instance
+## Start generating your instance
 
 To generate the required files you have to:
 1. Change the parameters inside `parameters.yaml` to match the type of instance you want to generate
