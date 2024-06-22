@@ -32,3 +32,7 @@ bash start.sh <instance_directory> [<seed>]
 ```bash
 bash start.sh instance1 442
 ```
+
+## Troubles?
+
+If the region generation takes too much to compute try relaxing the parameters, making them more reasonable. E.g. if you want to fit a lot of sites in a lot of cities in a very small region area such that the cities are largely spaced from each other, it might be hard for the algorithm to find a proper way to organize that, since it goes random.
