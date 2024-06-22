@@ -1,0 +1,50 @@
+# MAIN PARAMETERS USED TO CREATE INSTANCES
+---
+# Parameters related to the region creation
+region:
+  width_km: 100 # width of the region in Km
+  height_km: 100 # height of the region in Km
+  cell_size_km: 1 # grid resolution (1 means that between two adjacent points in the grid there is 1Km distance)
+  num_cities: 5 # number of separate groups of sites we wanna place in the region; each group simulate a city
+  min_distance_km: 35 # minimum distance in Km between any two city/group centers
+  num_sites: 500 # number of pick-up/delivery sites to place randomly forming 'num_cities' circular-shaped clusters
+  city_radius_min: 5 # min radius in Km cities can have
+  city_radius_max: 10 # max radius in Km cities can have
+  prob_inside: 0.995 # probability that a site is within a city radius
+  prob_outside: 0.005 # probability that a site is outside any city radius (it does not belong to any city)
+
+# Parameters related to the matrices creation
+matrice:
+  distanze:
+    min_variation: -0.25 # min percentage variation (e.s. dist(B,A) = dist(A,B) + min_variation * dist(A,B))
+    max_variation: 0.25 # max percentage variation (e.s. dist(B,A) = dist(A,B) + max_variation * dist(A,B))
+  tempi:
+    minutes_per_km_min: 1 # min amount of time in minutes to travel 1 Km
+    minutes_per_km_max: 3 # max amount of time in minutes to travel 1 Km
+
+# List of possible "classi merceologiche" (you can add more here)
+classi_merceologiche:
+- C1
+- C2
+- C3
+
+# List of possible "mezzi gerarchia" (you can add more here)
+mezzi_gerarchia:
+  colli con spazio: 1
+  pallet: 2
+
+# Parameters related to the "mezzi" table
+mezzi:
+  n_mezzi: 10 # number of trucks to create
+
+# Parameters related to the "spedizioni" table
+spedizioni:
+  n_spedizioni: 20 # number of shippings to create
+  ritiri: 0.4 # probability of having shippings of type "RT" (ritiri)
+  soft: 0.5 # probability of having shippings with soft window (finestra di consegna di tipo "soft")
+  all_region: 0 # 0 if shippings only consider sites inside a specific subregion (indicated by the following param); 1 if all the region is considered to randomly pick sites
+  subregion: # position and size of the subregion. Origin (0,0) is bottom-left (see axis of "data/region.png" for reference)
+    x: 0
+    y: 0
+    w: 20
+    h: 10
