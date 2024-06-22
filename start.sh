@@ -1,12 +1,20 @@
 #!/bin/bash
 
-# Check if a directory path is provided as an argument
+# Check if a directory path is provided as first argument
 if [ -z "$1" ]; then
-  echo "Usage: $0 <directory_path>"
+  echo "Usage: $0 <directory_path> <seed>"
   exit 1
 fi
 
 DIR=$1
+
+# Change the seed (OPTIONAL)
+if [ -n "$2" ]; then
+  SEED=$2
+else
+  SEED="None"  # Set a default value if not provided
+fi
+
 
 # Check if the directory exists
 if [ -d "$DIR" ]; then
@@ -23,7 +31,7 @@ else
 fi
 
 # Run the first Python script
-python region.py --output_dir $DIR
+python region.py --output_dir $DIR --seed $SEED
 
 # Check if the current script executed successfully
 if [ $? -ne 0 ]; then
@@ -32,7 +40,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run the next Python script
-python matrix.py --output_dir $DIR
+python matrix.py --output_dir $DIR --seed $SEED
 
 # Check if the current script executed successfully
 if [ $? -ne 0 ]; then
@@ -50,7 +58,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run the next Python script
-python mezzi.py --output_dir $DIR
+python mezzi.py --output_dir $DIR --seed $SEED
 
 # Check if the current script executed successfully
 if [ $? -ne 0 ]; then
@@ -59,7 +67,7 @@ if [ $? -ne 0 ]; then
 fi
 
 # Run the next Python script
-python spedizioni.py --output_dir $DIR
+python spedizioni.py --output_dir $DIR --seed $SEED
 
 # Check if the current script executed successfully
 if [ $? -ne 0 ]; then

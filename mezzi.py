@@ -1,7 +1,7 @@
 """ This file is used to generate the the mezzi.txt file """
 
 import argparse
-from utils import load_parameters, save_tsv_string, dict_list_to_tsv, generate_truck_code, read_classi_merc, read_mezzi_ger
+from utils import load_parameters, save_tsv_string, dict_list_to_tsv, generate_truck_code, read_classi_merc, read_mezzi_ger, none_or_int
 from datetime import datetime
 import random
 import os.path as osp
@@ -10,7 +10,7 @@ import os.path as osp
 def get_args_parser():
     parser = argparse.ArgumentParser('Set parameters', add_help=False)
     parser.add_argument('--parameters', default='parameters.yaml', type=str, help="Path to the parameters file")
-    parser.add_argument('--seed', default=442, type=int, help="Seed used for random choices")
+    parser.add_argument('--seed', default=442, type=none_or_int, help="Seed used for random choices")
     parser.add_argument('--output_dir', default='./instances', type=str, help="Where to store the mezzi.txt")
 
     return parser

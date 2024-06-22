@@ -1,14 +1,14 @@
 """ This file is used to generate the the spedizioni.txt file """
 
 import argparse
-from utils import load_parameters, save_tsv_string, dict_list_to_tsv, generate_shipping_code, site_inside_subregion, read_classi_merc, read_mezzi_ger, load_matrix
+from utils import load_parameters, save_tsv_string, dict_list_to_tsv, generate_shipping_code, site_inside_subregion, read_classi_merc, read_mezzi_ger, load_matrix, none_or_int
 import random
 import os.path as osp
 
 def get_args_parser():
     parser = argparse.ArgumentParser('Set parameters', add_help=False)
     parser.add_argument('--parameters', default='parameters.yaml', type=str, help="Path to the parameters file")
-    parser.add_argument('--seed', default=442, type=int, help="Seed used for random choices")
+    parser.add_argument('--seed', default=442, type=none_or_int, help="Seed used for random choices")
     parser.add_argument('--output_dir', default='./instances', type=str, help="Where to store the spedizioni.txt")
 
     return parser

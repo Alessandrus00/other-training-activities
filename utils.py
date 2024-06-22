@@ -2,6 +2,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 import yaml
 
+def none_or_int(value):
+    if value.lower() == 'none':
+        return None
+    try:
+        return int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError(f"{value} is not a valid integer or 'None'")
 
 def site_inside_subregion(px, py, x, y, w, h):
     """Check if point (px, py) is inside rectangle (x, y, w, h)."""
