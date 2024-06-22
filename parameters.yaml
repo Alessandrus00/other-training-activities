@@ -43,7 +43,7 @@ spedizioni:
   ritiri: 0.4 # probability of having shippings of type "RT" (ritiri)
   soft: 0.5 # probability of having shippings with soft window (finestra di consegna di tipo "soft")
   all_region: 1 # 0 if shippings only consider sites inside a specific subregion (indicated by the following param); 1 if all the region is considered to randomly pick sites
-  subregion: # position and size of the subregion. Origin (0,0) is bottom-left (see axis of "data/region.png" for reference)
+  subregion: # position and size of the subregion. Origin (0,0) is bottom-left (see axis in "region.png" for reference)
     x: 0
     y: 0
     w: 20
