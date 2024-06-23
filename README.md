@@ -11,9 +11,9 @@
 
 A region is a grid of points that simulates an area containing cities. Grid points are 1 Km spaced by default (you can change this in *cell_size_km* in `parameters.yaml`), and can be pick-up/delivery sites (red in the plot) or regular points (grey in the plot). Each group of points denotes a city, which has a radius in the range [city_radius_min, city_radius_max] (specified in the parameters file). These groups are created by randomly place *num_cities* points in the grid, satisfying the *min_distance_km* constraint, and then randomly place, for each of them, other points around, within a radius value chosen independently for each city in the interval above. This will allow having cities of various size and number of sites. With a small probability, sites are also placed in between cities.
 
-<div style="display: flex; justify-content: center;">
+<p align="center">
 <img src="img/region.png" alt="Example Image" style="width: 70%;">
-</div>
+</p>
 
 ## Setup
 
