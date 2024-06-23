@@ -11,7 +11,7 @@ import os.path as osp
 def get_args_parser():
     parser = argparse.ArgumentParser('Set parameters', add_help=False)
     parser.add_argument('--parameters', default='parameters.yaml', type=str, help="Path to the parameters file")
-    parser.add_argument('--seed', default=442, type=none_or_int, help="Seed used for random choices")
+    parser.add_argument('--seed', default=None, type=none_or_int, help="Seed used for random choices")
     parser.add_argument('--output_dir', default='./instances', type=str, help="Where to store the distance and time matrices")
 
     return parser
