@@ -1,6 +1,6 @@
 """ This file is used to generate the distance and time matrices from the randomly placed sites """
 
-from utils import create_6_digit_id_from_pairs, save_matrix, load_parameters, none_or_int
+from utils import *
 import pickle as pk
 import argparse
 from scipy.spatial import distance_matrix
@@ -47,6 +47,9 @@ def create_time_matrix(dist_matrix, minutes_per_km_min, minutes_per_km_max):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Set parameters", parents=[get_args_parser()])
     args = parser.parse_args()
+    
+    # Check if output directory exists; otherwise create it
+    create_directory_if_not_exists(args.output_dir)
     
     # Load the parameters
     params = load_parameters(args.parameters)

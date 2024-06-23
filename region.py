@@ -3,8 +3,7 @@
 import numpy as np
 import random
 from scipy.spatial import distance_matrix
-from utils import load_parameters
-from utils import plot_region, none_or_int
+from utils import *
 import argparse
 import pickle as pk
 import os.path as osp
@@ -68,6 +67,9 @@ def place_sites_around_city_centers(grid, city_centers, city_radii, num_sites, c
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Set parameters", parents=[get_args_parser()])
     args = parser.parse_args()
+    
+    # Check if output directory exists; otherwise create it
+    create_directory_if_not_exists(args.output_dir)
     
     # Load the parameters
     params = load_parameters(args.parameters)

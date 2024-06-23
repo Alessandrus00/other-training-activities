@@ -1,7 +1,7 @@
 """ This file is used to generate the the mezzi.txt file """
 
 import argparse
-from utils import load_parameters, save_tsv_string, dict_list_to_tsv, generate_truck_code, read_classi_merc, read_mezzi_ger, none_or_int
+from utils import *
 from datetime import datetime
 import random
 import os.path as osp
@@ -60,6 +60,9 @@ def build_truck_table(n_trucks, output_dir):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Set parameters", parents=[get_args_parser()])
     args = parser.parse_args()
+    
+    # Check if output directory exists; otherwise create it
+    create_directory_if_not_exists(args.output_dir)
     
     random.seed(args.seed)
     

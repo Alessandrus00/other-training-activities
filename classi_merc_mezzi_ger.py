@@ -1,7 +1,7 @@
 """ This file is used to generate the classi_merceologiche.txt and mezzi_gerarchia.txt files according to the parameters.json file """
 
 import argparse
-from utils import load_parameters
+from utils import *
 import os.path as osp
 
 def get_args_parser():
@@ -34,6 +34,9 @@ def create_mezzi_gerarchia(filepath, param):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Set parameters", parents=[get_args_parser()])
     args = parser.parse_args()
+    
+    # Check if output directory exists; otherwise create it
+    create_directory_if_not_exists(args.output_dir)
     
     # Load the parameters
     params = load_parameters(args.parameters)

@@ -1,6 +1,12 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import yaml
+import os
+
+def create_directory_if_not_exists(directory):
+    """Create the directory if it does not exist."""
+    if not os.path.exists(directory):
+        os.makedirs(directory)
 
 def none_or_int(value):
     if value.lower() == 'none':
