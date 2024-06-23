@@ -1,2 +1,7 @@
 # Exclude all directories
 */
+
+# Unignore the specific directory
+!/img/
+
+.DS_Store
