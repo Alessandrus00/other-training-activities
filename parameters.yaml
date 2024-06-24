@@ -46,8 +46,8 @@ mezzi:
   portata_peso_max: 1200
   costo_fisso_euro_min: 40
   costo_fisso_euro_max: 80
-  Costo_perKm_euro_min: 1
-  Costo_perKm_euro_max: 1.7
+  costo_perKm_euro_min: 1
+  costo_perKm_euro_max: 1.7
 
 # Parameters related to the "spedizioni" table
 spedizioni:

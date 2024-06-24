@@ -32,7 +32,7 @@ def build_truck_table(mezzi_param, output_dir):
         row['Portata_volume'] = round(random.uniform(mezzi_param['portata_volume_min'],mezzi_param['portata_volume_max']), 2)
         row['Portata_peso'] = round(random.uniform(mezzi_param['portata_peso_min'],mezzi_param['portata_peso_max']), 2)
         row['Costo_fisso_euro'] = round(random.uniform(mezzi_param['costo_fisso_euro_min'],mezzi_param['costo_fisso_euro_max']), 2)
-        row['Costo_perKm_euro'] = round(random.uniform(mezzi_param['Costo_perKm_euro_min'],mezzi_param['Costo_perKm_euro_max']), 2)
+        row['Costo_perKm_euro'] = round(random.uniform(mezzi_param['costo_perKm_euro_min'],mezzi_param['costo_perKm_euro_max']), 2)
         row['Tipologia_mezzo'] = random.choice(mezzi_ger)[0]
 
         n_classes_to_sample = random.randint(1, len(classes_merc))
