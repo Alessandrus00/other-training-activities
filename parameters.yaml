@@ -36,6 +36,7 @@ mezzi_gerarchia:
 # Parameters related to the "mezzi" table
 mezzi:
   n_mezzi: 10 # number of trucks to create
+  # other properties of the trucks
   portata_colli_min: 80
   portata_colli_max: 120
   portata_pallet_min: 8
