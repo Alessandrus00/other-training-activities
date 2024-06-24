@@ -2,7 +2,6 @@
 
 import argparse
 from utils import *
-from datetime import datetime
 import random
 import os.path as osp
 
@@ -40,15 +39,10 @@ def build_truck_table(n_trucks, output_dir):
 
         row['Tipo_distanze'] = 'NORMALE'
         row['ora_minima_inizio_giro'] = random.choice(['05:00', '06:00', '08:00'])
-        row['pausa_inizia_a_partire_dalle'] = random.choice(['12:00','12:30','13:00'])
+        row['pausa_inizia_a_partire_dalle'] = '12:00'
         row['pausa_finisce entro_le'] = '14:00'
 
-        # Parse the time strings into datetime objects
-        datetime1 = datetime.strptime(row['pausa_inizia_a_partire_dalle'], '%H:%M')
-        datetime2 = datetime.strptime(row['pausa_finisce entro_le'], '%H:%M')
-
-        # Calculate the difference in minutes
-        row['durata_pausa'] = int(abs((datetime2 - datetime1).total_seconds() // 60))
+        row['durata_pausa'] = random.choice([30,60,90])
 
         truck_table.append(row)
     

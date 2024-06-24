@@ -46,6 +46,8 @@ If you wish to generate specific files, e.g. just the "spedizioni.txt", you can 
 python spedizioni.py --parameters parameters.yaml --output_dir instance1 --seed 442
 ```
 
+**Note**: The files must be generated following the order: region > matrix > classi merci > mezzi gerarchia > mezzi > spedizioni. If you wish to change, for instance, just the "classi_merc.txt" and/or "mezzi_gerarchia.txt" by running the corresp. `classi_merc_mezzi_ger.py`, you have to regenerate "spedizioni.txt", as otherwise there could be value inconsistencies.
+
 ## Region generation taking too much?
 
 If the region generation takes too much to compute try relaxing the parameters, making them more reasonable. E.g. if you want to fit a lot of sites in a lot of cities in a very small region area such that the cities are spread apart, it might be hard for the algorithm to find a proper way to organize that, since it goes random and the constraints are very tight.
