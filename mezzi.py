@@ -15,23 +15,24 @@ def get_args_parser():
     return parser
 
 
-def build_truck_table(n_trucks, output_dir):
+def build_truck_table(mezzi_param, output_dir):
   
     # get foreign keys
     classes_merc = read_classi_merc(osp.join(output_dir, "classi_merc.txt"))
     mezzi_ger = read_mezzi_ger(osp.join(output_dir, "mezzi_gerarchia.txt"))
 
     truck_table = []
+    n_trucks = mezzi_param['n_mezzi']
     for i in range(n_trucks):
         row = {}
 
         row['ID_mezzo'] = generate_truck_code(i)
-        row['Portata_colli'] = random.randint(80,120)
-        row['Portata_pallet'] = random.randint(8,15)
-        row['Portata_volume'] = round(random.uniform(900, 1200), 2)
-        row['Portata_peso'] = round(random.uniform(900, 1200), 2)
-        row['Costo_fisso_euro'] = round(random.uniform(40, 80), 2)
-        row['Costo_perKm_euro'] = round(random.uniform(1, 1.7), 2)
+        row['Portata_colli'] = random.randint(mezzi_param['portata_colli_min'],mezzi_param['portata_colli_max'])
+        row['Portata_pallet'] = random.randint(mezzi_param['portata_pallet_min'],mezzi_param['portata_pallet_max'])
+        row['Portata_volume'] = round(random.uniform(mezzi_param['portata_volume_min'],mezzi_param['portata_volume_max']), 2)
+        row['Portata_peso'] = round(random.uniform(mezzi_param['portata_peso_min'],mezzi_param['portata_peso_max']), 2)
+        row['Costo_fisso_euro'] = round(random.uniform(mezzi_param['costo_fisso_euro_min'],mezzi_param['costo_fisso_euro_max']), 2)
+        row['Costo_perKm_euro'] = round(random.uniform(mezzi_param['Costo_perKm_euro_min'],mezzi_param['Costo_perKm_euro_max']), 2)
         row['Tipologia_mezzo'] = random.choice(mezzi_ger)[0]
 
         n_classes_to_sample = random.randint(1, len(classes_merc))
@@ -65,4 +66,4 @@ if __name__ == "__main__":
     mezzi_param = params['mezzi']
     
     # Build the trucks table and save it
-    build_truck_table(mezzi_param['n_mezzi'], args.output_dir)
+    build_truck_table(mezzi_param, args.output_dir)

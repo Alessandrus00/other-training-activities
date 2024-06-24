@@ -36,6 +36,18 @@ mezzi_gerarchia:
 # Parameters related to the "mezzi" table
 mezzi:
   n_mezzi: 10 # number of trucks to create
+  portata_colli_min: 80
+  portata_colli_max: 120
+  portata_pallet_min: 8
+  portata_pallet_max: 15
+  portata_volume_min: 900
+  portata_volume_max: 1200
+  portata_peso_min: 900
+  portata_peso_max: 1200
+  costo_fisso_euro_min: 40
+  costo_fisso_euro_max: 80
+  Costo_perKm_euro_min: 1
+  Costo_perKm_euro_max: 1.7
 
 # Parameters related to the "spedizioni" table
 spedizioni:
